@@ -1,7 +1,33 @@
-<input type="file" id="selector" multiple>
-<button onclick="upload()">Upload</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Upload files</title>
+    <style>
+        .button {
+            background-color: #04AA6D;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 
-<div id="status">No uploads</div>
+<body>
+    <div class="container">
+        <input type="file" id="selector" multiple>
+        <div id="status">No uploads selected</div>
+        <button class="button" onclick="upload()">Upload</button>
+    </div>
+</body>
+
+
+
 
 <script type="text/javascript">
     // `upload` iterates through all files selected and invokes a helper function called `retrieveNewURL`.

@@ -44,14 +44,15 @@ def status():
 
 script = """#!/bin/bash
 #SBATCH -A nstaff
-#SBATCH -C cron
-#SBATCH -q workflow
+#SBATCH -C cpu
+#SBATCH -q shared
+#SBATCH -J minio_upload
 #SBATCH -N 1
 #SBATCH -c 1
 #SBATCH -t 2
 #SBATCH --chdir={user_scratch}/mino_s3_demo
-#SBATCH -o {user_scratch}/mino_s3_demo/sfapi_demo.out
-#SBATCH -e {user_scratch}/mino_s3_demo/sfapi_demo.err
+#SBATCH -o {user_scratch}/mino_s3_demo/sfapi_demo_%j.out
+#SBATCH -e {user_scratch}/mino_s3_demo/sfapi_demo_%j.err
 
 export PATH=$PATH:{user_home}/.local/bin
 

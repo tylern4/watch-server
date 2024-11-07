@@ -8,7 +8,7 @@ import numpy as np
 def make_data():
     print("Making data")
     normal = np.random.normal(0, 500, 10_000_000)
-    num = np.random.random_integers(0, 100)
+    num = np.random.randint(0, 100)
     data_file = Path(f"data_{num}.dat")
     normal.tofile(data_file)
     print(f"Made: {data_file}")
