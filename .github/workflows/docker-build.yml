@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           platforms: linux/amd64
-          context: .
+          context: server
           push: true
           load: false
           tags: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
